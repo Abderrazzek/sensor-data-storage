@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"> </script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"> </script>
+</head>
+
+<script>
+		 $(document).bind('mobileinit',function(){
+		 $.mobile.changePage.defaults.changeHash = false;
+		 $.mobile.hashListeningEnabled = false;
+		 $.mobile.pushStateEnabled = false;
+		 });
+	</script>
+	
+
+<body>
+
+              <!-------------------Home---------------------->
+
+<div data-role="page" id="home" data-theme="b"> 
+<div data-role="header" >
+<a href="#" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+<h1>Acceuil</h1>
+<a href="#" class="ui-btn ui-icon-back ui-btn-icon-right"  data-rel="back" >Retour</a>
+</div>
+<div  data-role="main" class="ui-content">
+<section>
+<article>
+<h2>Description :</h2>
+Cette application est un exemple d'une application hybride générée via Apache Cordova.
+Elle comporte quatre interfaces dont l'accueil. Une interface autre interface permet d'afficher vos contacts. Une autre permet d'afficher votre position. Finalement, une interface donne des informations techniques sur l'application
+
+<div id="show-data"></div>
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+function callproverbe(data){
+$("#show-data").text(data.premier);}
+
+$(document).ready(function(){
+$("#get-data").click(function(){
+$.getJSON("http://mdev-KsouriHattab.rhcloud.com/proverbes.json?callproverbe=?");
+});
+});
+
+</script>
+<div id="show-data"></div>
+</article>
+</section>
+</div>
+<div data-role="footer"  data-position="fixed">
+<div data-role="navbar" >
+<ul>
+<li><a href="#contacts" class="ui-btn" data-transition="slide">Contacts</a></li>
+<li><a href="#emplacement" class="ui-btn" data-transition="slide">Emplacement</a></li>
+<li><a href="#apropos" class="ui-btn" data-transition="slide">A propos</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+               <!---------------------Contacts---------------------->
+
+
+<div data-role="page" id="contacts" data-theme="b"> 
+<div data-role="header" >
+<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left" >Home</a>
+<h1>Liste des Contacts</h1>
+<a href="#" class="ui-btn ui-icon-back ui-btn-icon-right"  data-rel="back" >Retour</a>
+</div>
+
+<div  datarole="main" class="ui-content">
+<div data-role="panel" data-position="right"></div>
+<div data-role="panel" data-position="right"></div>
+<ol data-role="listview" >
+<li><a href="#thabet">thabet</a></li>
+ 
+</ol>
+</div>
+<div data-role="panel" data-position="right" data-position-fixed="false" data-display="overlay" id="thabet">
+<label >Numéro: </label><input type="text" name="text" value="22 222 222"></input><br>              
+</div>
+<div data-role="panel" data-position="right" data-position-fixed="false" data-display="overlay" id="">
+<label >Numéro :</label><input type="text" name="text" value="55 555 555"></input><br>              
+</div>ha
+<div data-role="navbar" >
+<ul>
+<li><a href="#contacts" class="ui-btn" data-transition="slide">Contacts</a></li>
+<li><a href="#emplacement" class="ui-btn" data-transition="slide">Emplacement</a></li>
+<li><a href="#apropos" class="ui-btn" data-transition="slide">A propos</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+              <!---------------------Emplacement---------------------->
+
+
+<div data-role="page" id="emplacement" data-theme="b"> 
+<div data-role="header">
+<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+<h1>Emplacement</h1>
+<a href="#" class="ui-btn ui-icon-back ui-btn-icon-right"  data-rel="back" >Retour</a>
+</div>
+<div  datarole="main" class="ui-content">
+<section>
+<article>
+Latitude : 0
+</br>
+Longitude :0
+</br>
+Altitude : 0
+</article>
+</section>
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar" >
+<ul>
+<li><a href="#contacts" class="ui-btn" data-transition="slide">Contacts</a></li>
+<li><a href="#emplacement" class="ui-btn" data-transition="slide">Emplacement</a></li>
+<li><a href="#apropos" class="ui-btn" data-transition="slide">A propos</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+              <!---------------------A propos---------------------->
+
+
+<div data-role="page" id="apropos" data-theme="b"> 
+<div data-role="header">
+<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+<h1>A propos</h1>
+<a href="#" class="ui-btn ui-icon-back ui-btn-icon-right"  data-rel="back" >Retour</a>
+</div>
+<div  datarole="main" class="ui-content">
+<section>
+<article>
+Version : 1.0
+</br>
+Système :Android
+</br>
+Auteur : M-Developer
+</br>
+Page Web : <a href="www.facebook.com">www.facebook.com</a>
+</article>
+</section>
+</div>
+<div data-role="footer" data-position="fixed">
+<div data-role="navbar" >
+<ul>
+<li><a href="#contacts" class="ui-btn" data-transition="slide">Contacts</a></li>
+<li><a href="#emplacement" class="ui-btn" data-transition="slide">Emplacement</a></li>
+<li><a href="#apropos" class="ui-btn" data-transition="slide">A propos</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</div>
+</html>
+
